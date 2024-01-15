@@ -12,4 +12,12 @@ document.getElementById('phoneNum').addEventListener('input', (event) => {
         input.classList.remove('invalid');
         format.classList.remove('block');
     }
+});
+
+document.getElementById('phoneForm').addEventListener("submit", (event) => {
+    event.preventDefault();
+    const input = document.getElementById('phoneNum');
+    const regex = /[()-. ]/g;
+    const savedPhoneNum = input.value.replaceAll(regex, "");
+    console.log(savedPhoneNum);
 })
